@@ -1,5 +1,6 @@
 package com.example.sianiodemc
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -10,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sianiodemc.databinding.ActivityMainBinding
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -26,6 +28,8 @@ class MainActivity : AppCompatActivity() {
     private var mStorage:FirebaseStorage? = null
     private var mDatabaseRef: DatabaseReference? = null
     private var mDBListener: ValueEventListener? = null
+
+    private lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,5 +70,15 @@ class MainActivity : AppCompatActivity() {
                 binding.myDataLoaderProgressBar.visibility = View.GONE
             }
         })
+
+        firebaseAuth = FirebaseAuth.getInstance()
+
+        binding.btnlogout.setOnClickListener {
+            firebaseAuth.signOut()
+            Intent(this@MainActivity, LoginActivity::class.java).also {
+                it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(it)
+            }
+        }
     }
 }
