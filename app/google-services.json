@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "964580265007",
+    "firebase_url": "https://sianiodemc-default-rtdb.firebaseio.com",
+    "project_id": "sianiodemc",
+    "storage_bucket": "sianiodemc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:964580265007:android:ff11c6e6589a4b65418ada",
+        "android_client_info": {
+          "package_name": "com.example.sianiodemc"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyii6kwB2FGGjBmAWAxGT6gh_ugalzzM0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
